@@ -32,19 +32,20 @@ class SpringbootBackendApplicationTests {
 		Assertions.assertThat(employees.size()).isGreaterThan(0);
 	}
 
-// ---------------Create Employee Test-------------------------------
+// ---------------Create new Employee Test-------------------------------
 
 	@Test
 	@Order(1)
 	@Rollback(value = false)
 	public void createEmployeeTest() {
-		Employee employee = new Employee("Spoorthi", "Hegde", "Spoo@gmail.com");
+		Employee employee = new Employee("Spoorthi", "Hegde", "spoo@gmail.com");
 		employeeRepository.save(employee);
+		
 		Assertions.assertThat(employee.getId()).isGreaterThan(0);
 	}
 
 //---------------------Get Employee by Id Test-----------------------
-
+	
 	@Test
 	@Order(2)
 	public void getEmployeeTest() {
@@ -52,7 +53,7 @@ class SpringbootBackendApplicationTests {
 		Assertions.assertThat(employee.getId()).isEqualTo(3);
 	}
 
-//---------------------Update Employee Test--------------------------
+//---------------------Update (Edit) Employee Test--------------------------
 
 	@Test
 	@Order(4)

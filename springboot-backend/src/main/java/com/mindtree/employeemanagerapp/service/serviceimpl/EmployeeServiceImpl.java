@@ -64,4 +64,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 		return isDeleted;
 	}
+
+	@Override
+	public Employee findByEmailId(String email) {
+		return employeeRepository.findByEmailId(email).get();
+	}
 }

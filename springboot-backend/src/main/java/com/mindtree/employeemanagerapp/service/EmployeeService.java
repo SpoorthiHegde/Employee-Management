@@ -35,5 +35,7 @@ public interface EmployeeService {
 	 * @return created employee
 	 */
 	Employee createEmployee(Employee employee);
+	
+	Employee findByEmailId(String email);
 
 }
